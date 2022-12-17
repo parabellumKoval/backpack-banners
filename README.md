@@ -1,31 +1,54 @@
-# Banner
+# Backpack-banners
 
-[![Build Status](https://travis-ci.org/aimix/banner.svg?branch=master)](https://travis-ci.org/aimix/banner)
-[![styleci](https://styleci.io/repos/CHANGEME/shield)](https://styleci.io/repos/CHANGEME)
-[![Coverage Status](https://coveralls.io/repos/github/aimix/banner/badge.svg?branch=master)](https://coveralls.io/github/aimix/banner?branch=master)
+[![Build Status](https://travis-ci.org/parabellumKoval/backpack-banners.svg?branch=master)](https://travis-ci.org/parabellumKoval/backpack-banners)
+[![Coverage Status](https://coveralls.io/repos/github/parabellumKoval/backpack-banners/badge.svg?branch=master)](https://coveralls.io/github/parabellumKoval/backpack-banners?branch=master)
 
-[![Packagist](https://img.shields.io/packagist/v/aimix/banner.svg)](https://packagist.org/packages/aimix/banner)
-[![Packagist](https://poser.pugx.org/aimix/banner/d/total.svg)](https://packagist.org/packages/aimix/banner)
-[![Packagist](https://img.shields.io/packagist/l/aimix/banner.svg)](https://packagist.org/packages/aimix/banner)
+[![Packagist](https://img.shields.io/packagist/v/parabellumKoval/backpack-banners.svg)](https://packagist.org/packages/parabellumKoval/backpack-banners)
+[![Packagist](https://poser.pugx.org/parabellumKoval/backpack-banners/d/total.svg)](https://packagist.org/packages/parabellumKoval/backpack-banners)
+[![Packagist](https://img.shields.io/packagist/l/parabellumKoval/backpack-banners.svg)](https://packagist.org/packages/parabellumKoval/backpack-banners)
 
-Package description: CHANGE ME
+This package provides a quick starter kit for implementing reviews for Laravel Backpack. Provides a database, CRUD interface, API routes and more.
 
 ## Installation
 
 Install via composer
 ```bash
-composer require aimix/banner
+composer require parabellumKoval/backpack-banners
 ```
 
-### Publish Configuration File
-
+Migrate
 ```bash
-php artisan vendor:publish --provider="Aimix\Banner\ServiceProvider" --tag="config"
+php artisan migrate
+```
+
+### Publish
+
+#### Configuration File
+```bash
+php artisan vendor:publish --provider="Backpack\Banners\ServiceProvider" --tag="config"
+```
+
+#### Views File
+```bash
+php artisan vendor:publish --provider="Backpack\Banners\ServiceProvider" --tag="views"
+```
+
+#### Migrations File
+```bash
+php artisan vendor:publish --provider="Backpack\Banners\ServiceProvider" --tag="migrations"
+```
+
+#### Routes File
+```bash
+php artisan vendor:publish --provider="Backpack\Banners\ServiceProvider" --tag="routes"
 ```
 
 ## Usage
 
-CHANGE ME
+### Seeders
+```bash
+php artisan db:seed --class="Backpack\Banners\database\seeders\BannersSeeder"
+```
 
 ## Security
 
@@ -34,8 +57,5 @@ instead of using the issue tracker.
 
 ## Credits
 
-- [](https://github.com/aimix/banner)
-- [All contributors](https://github.com/aimix/banner/graphs/contributors)
-
-This package is bootstrapped with the help of
-[melihovv/laravel-package-generator](https://github.com/melihovv/laravel-package-generator).
+- [](https://github.com/parabellumKoval/backpack-banners)
+- [All contributors](https://github.com/parabellumKoval/backpack-banners/graphs/contributors)

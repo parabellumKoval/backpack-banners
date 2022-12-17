@@ -21,20 +21,11 @@ class BannerCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
     
-    private $languages = 'ru';
-
     public function setup()
     {
         $this->crud->setModel('Backpack\Banners\app\Models\Banner');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/banner');
         $this->crud->setEntityNameStrings('баннер', 'Баннеры');
-        
-        if(config('aimix.aimix.enable_languages')) {
-          $this->languages = Language::getActiveLanguagesNames();
-          
-          $this->crud->query = $this->crud->query->withoutGlobalScopes();
-          $this->crud->model->clearGlobalScopes();
-        }
     }
 
     protected function setupListOperation()
@@ -89,7 +80,7 @@ class BannerCrudController extends CrudController
           'type'  => 'repeatable',
           'fields' => [
             [
-              'name' => 'title',
+              'name' => 'caption',
               'label' => 'Заголовок'
             ],
             [
@@ -126,9 +117,8 @@ class BannerCrudController extends CrudController
               ],
             ],
           ],
-          'new_item_label'  => 'Добавить изобрежение',
+          'new_item_label'  => 'Добавить элемент',
           'init_rows' => 1,
-          'tab' => 'Изображения'
         ]);
     }
 
