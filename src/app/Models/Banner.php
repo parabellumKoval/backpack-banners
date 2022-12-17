@@ -8,10 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 
 use Backpack\CRUD\app\Models\Traits\SpatieTranslatable\HasTranslations;
 
+// FACTORY
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Backpack\Banners\database\factories\BannerFactory;
+
 class Banner extends Model
 {
     use CrudTrait;
     use HasTranslations;
+    use HasFactory;
 
     /*
     |--------------------------------------------------------------------------
@@ -19,7 +24,7 @@ class Banner extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'banners';
+    protected $table = 'ak_banners';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
@@ -29,9 +34,6 @@ class Banner extends Model
 
     protected $casts = [
       'items' => 'array'
-    ];
-    protected $fakeColumns = [
-      'items'
     ];
 
     protected $translatable = ['items'];
@@ -47,6 +49,16 @@ class Banner extends Model
 		    'items' => $this->items,
 		    'is_active' => $this->is_active,
 	    ];
+    }
+
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    protected static function newFactory()
+    {
+      return BannerFactory::new();
     }
     
     protected static function boot()
