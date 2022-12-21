@@ -46,6 +46,7 @@ class Banner extends Model
 	    return [
 		    'id' => $this->id,
 		    'name' => $this->name,
+		    'slug' => $this->slug,
 		    'items' => $this->items,
 		    'is_active' => $this->is_active,
 	    ];
@@ -82,6 +83,10 @@ class Banner extends Model
     | SCOPES
     |--------------------------------------------------------------------------
     */
+    public function scopeActive($query)
+    {
+      return $query->where('is_active', 1);
+    }
 
     /*
     |--------------------------------------------------------------------------
