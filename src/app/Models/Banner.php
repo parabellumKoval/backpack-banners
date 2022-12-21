@@ -15,8 +15,8 @@ use Backpack\Banners\database\factories\BannerFactory;
 class Banner extends Model
 {
     use CrudTrait;
-    use HasTranslations;
     use HasFactory;
+    use HasTranslations;
 
     /*
     |--------------------------------------------------------------------------
@@ -36,6 +36,10 @@ class Banner extends Model
       'items' => 'array'
     ];
 
+    // protected $fakeColumns = [
+    //   'items'
+    // ];
+
     protected $translatable = ['items'];
     /*
     |--------------------------------------------------------------------------
@@ -47,7 +51,7 @@ class Banner extends Model
 		    'id' => $this->id,
 		    'name' => $this->name,
 		    'slug' => $this->slug,
-		    'items' => $this->items,
+		    'items' => $this->items? json_decode($this->items): null,
 		    'is_active' => $this->is_active,
 	    ];
     }

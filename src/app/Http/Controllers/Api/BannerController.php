@@ -27,6 +27,7 @@ class BannerController extends \App\Http\Controllers\Controller
         return response()->json($e->getMessage(), 404);
       }
     }
+    //dd($banner);
 
     return response()->json($banner);
   }
