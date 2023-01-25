@@ -33,7 +33,8 @@ class BannerFactory extends Factory
               'caption' => $this->faker->words(3, true),
               'excerpt' => $this->faker->sentence(),
               'content' => $this->faker->paragraph(2),
-              'link' => $this->faker->url()
+              'link' => $this->faker->url(),
+              'link_text' => $this->faker->words(1, true)
             ],[
               'src' => $this->faker->imageUrl(1280, 740, 'banner', true),
               'alt' => $this->faker->words(3, true),
@@ -41,7 +42,8 @@ class BannerFactory extends Factory
               'caption' => $this->faker->words(3, true),
               'excerpt' => $this->faker->sentence(),
               'content' => $this->faker->paragraph(2),
-              'link' => $this->faker->url()
+              'link' => $this->faker->url(),
+              'link_text' => $this->faker->words(1, true)
             ],[
               'src' => $this->faker->imageUrl(1280, 740, 'banner', true),
               'alt' => $this->faker->words(3, true),
@@ -49,7 +51,8 @@ class BannerFactory extends Factory
               'caption' => $this->faker->words(3, true),
               'excerpt' => $this->faker->sentence(),
               'content' => $this->faker->paragraph(2),
-              'link' => $this->faker->url()
+              'link' => $this->faker->url(),
+              'link_text' => $this->faker->words(1, true)
             ]
           ]
         ],

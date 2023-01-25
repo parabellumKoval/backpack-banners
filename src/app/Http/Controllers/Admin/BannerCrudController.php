@@ -95,7 +95,17 @@ class BannerCrudController extends CrudController
             ],
             [
               'name' => 'link',
-              'label' => 'Ссылка'
+              'label' => 'Ссылка',
+              'wrapper'   => [ 
+                'class' => 'form-group col-md-6'
+              ],
+            ],
+            [
+              'name' => 'link_text',
+              'label' => 'Текст ссылки',
+              'wrapper'   => [ 
+                'class' => 'form-group col-md-6'
+              ],
             ],
             [
               'name' => 'src',
@@ -104,7 +114,7 @@ class BannerCrudController extends CrudController
             ],
             [
               'name' => 'alt',
-              'label' => 'Alt изображения', 
+              'label' => 'Alt изображения',
               'wrapper'   => [ 
                 'class' => 'form-group col-md-6'
               ],
