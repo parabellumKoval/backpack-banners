@@ -18,7 +18,7 @@ use Backpack\Banners\app\Http\Controllers\Api\BannerController;
 
 Route::prefix('api/banners')->controller(BannerController::class)->group(function () {
   
-  Route::get('', 'index');
-  Route::get('{id_or_slug}', 'show');
+  Route::get('', 'index')->middleware('api');
+  Route::get('{id_or_slug}', 'show')->middleware('api');
 
 });
