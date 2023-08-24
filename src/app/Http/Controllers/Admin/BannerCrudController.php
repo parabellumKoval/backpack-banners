@@ -110,7 +110,8 @@ class BannerCrudController extends CrudController
             [
               'name' => 'src',
               'label' => 'Изображение',
-              'type' => 'browse'
+              'type' => 'browse',
+              'hint' => 'Названия файлов загруженных через файловый менеджен должны быть на латинице и без пробелов.'
             ],
             [
               'name' => 'alt',
