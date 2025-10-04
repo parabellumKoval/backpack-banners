@@ -23,6 +23,8 @@ class CreateAkBannersTable extends Migration
 
             $table->boolean('is_active')->default(1);
             
+            $table->json('countries')->nullable();
+
             // $table->text('desc', 255)->nullable();
             // $table->string('short_desc', 255)->nullable();
             // $table->string('link', 255)->nullable();
